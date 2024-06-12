@@ -17,8 +17,7 @@ ARG OVERLAY_WS=/smb_ws
 FROM $BASE_IMAGE AS cacher
 
 ARG OVERLAY_WS
-ARG SMB_REPO_BRANCH_NAME
-ARG SMB_RAW_REPO_URL
+ARG SMB_RAW_REPO_FILE_URL
 
 # Fetch source code
 WORKDIR ${OVERLAY_WS}/src
@@ -54,5 +53,6 @@ RUN --mount=type=bind,from=cacher,source=/tmp/${OVERLAY_WS}/src,target=${OVERLAY
 
 # Save SMB_RAW_REPO_FILE_URL as an environment variable
 # It is used to fetch source code in post-create.sh script of devcontainer
+ARG SMB_RAW_REPO_FILE_URL
 ENV SMB_RAW_REPO_FILE_URL=${SMB_RAW_REPO_FILE_URL}
 
