@@ -43,7 +43,7 @@ For detailed instructions, please refer to the [Dev Containers documentation](ht
 
 ### **Method 2**: Clone the workspace to your local file system and open it in VScode.
 > [!WARNING]  
-> The Dev Containers extension uses "bind mounts" to source code in your local filesystem by default. While this is the simplest option, on macOS and Windows, you may encounter slower disk performance when using `catkin build` or other disk-intensive operations. If you encounter this issue, consider using Method 2.
+> The Dev Containers extension uses "bind mounts" to source code in your local filesystem by default. While this is the simplest option, on macOS and Windows, you may encounter slower disk performance when using `catkin build` or other disk-intensive operations. If you encounter this issue, consider using Method 1.
 
 ##### Clone the workspace
 ```bash
