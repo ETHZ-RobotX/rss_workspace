@@ -1,0 +1,5 @@
+.catkin_tools/
+.zsh_history
+devel/
+logs/
+build/

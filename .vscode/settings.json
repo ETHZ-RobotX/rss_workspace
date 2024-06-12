@@ -1,0 +1,23 @@
+{
+  "python.autoComplete.extraPaths": [
+    "/opt/ros/noetic/lib/python3/dist-packages"
+  ],
+  "python.analysis.extraPaths": [
+    "/opt/ros/noetic/lib/python3/dist-packages"
+  ],
+  "git.autoRepositoryDetection": true,
+  "git.repositoryScanMaxDepth": 5,
+  "git.ignoredRepositories": [
+    "src/lib/ocs2",
+    "src/lib/gtsam_catkin",
+    "src/misc/minkindr",
+    "src/misc/catkin_simple",
+    "src/misc/minkindr_ros",
+    "src/misc/eigen_checks",
+    "src/misc/glog_catkin",
+    "src/misc/gflags_catkin",
+    "src/misc/mav_comm",
+    "src/misc/eigen_catkin",
+    "src/misc/yaml_cpp_catkin"
+  ]
+}
