@@ -8,6 +8,7 @@
 ARG SMB_REPO_FULL_NAME=ETHZ-RobotX/SuperMegaBot
 ARG SMB_REPO_BRANCH_NAME=docker
 ARG SMB_RAW_REPO_URL=https://raw.githubusercontent.com/${SMB_REPO_FULL_NAME}/${SMB_REPO_BRANCH_NAME}
+ARG SMB_RAW_REPO_FILE_URL=${SMB_RAW_REPO_URL}/smb.repos
 
 ARG BASE_IMAGE=ghcr.io/ethz-robotx/smb_ros_base:latest
 ARG OVERLAY_WS=/smb_ws
@@ -21,7 +22,7 @@ ARG SMB_RAW_REPO_URL
 
 # Fetch source code
 WORKDIR ${OVERLAY_WS}/src
-RUN vcs import --recursive --input ${SMB_RAW_REPO_URL}
+RUN vcs import --recursive --input ${SMB_RAW_REPO_FILE_URL}
 
 WORKDIR /tmp
 RUN find ${OVERLAY_WS}/src -name "package.xml" | \
@@ -51,7 +52,7 @@ RUN --mount=type=bind,from=cacher,source=/tmp/${OVERLAY_WS}/src,target=${OVERLAY
     rosdep install --from-paths ${OVERLAY_WS}/src --ignore-src --os=ubuntu:focal -r -y && \
     rm -rf /var/lib/apt/lists/*
 
-# Save SMB_RAW_REPO_URL as an environment variable
+# Save SMB_RAW_REPO_FILE_URL as an environment variable
 # It is used to fetch source code in post-create.sh script of devcontainer
-ENV SMB_RAW_REPO_URL=${SMB_RAW_REPO_URL}
+ENV SMB_RAW_REPO_FILE_URL=${SMB_RAW_REPO_FILE_URL}
 

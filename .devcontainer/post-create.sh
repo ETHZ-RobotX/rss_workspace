@@ -23,7 +23,7 @@ if [ ! -d "${ROOT}/src" ]; then
 fi
 
 # Clone the repository
-vcs import --input "${SMB_RAW_REPO_URL}" --recursive --skip-existing "${ROOT}/src"
+vcs import --input "${SMB_RAW_REPO_FILE_URL}" --recursive --skip-existing "${ROOT}/src"
 
 # Setup catkin workspace
 catkin init --workspace "${ROOT}" 
