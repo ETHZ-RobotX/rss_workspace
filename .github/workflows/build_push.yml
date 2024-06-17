@@ -53,7 +53,7 @@ jobs:
 
       - name: Build and push Docker image
         id: docker-build
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         env:
           BUILDX_NO_DEFAULT_ATTESTATIONS: 1
         with:
