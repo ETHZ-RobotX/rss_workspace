@@ -25,9 +25,9 @@
 			"configureZshAsDefaultShell": true
 		},
 		"ghcr.io/devcontainers/features/git:1": {},
-		// "ghcr.io/devcontainers/features/desktop-lite:1": {
-		// 	"password": "robotx"
-		// }
+		"ghcr.io/devcontainers/features/desktop-lite:1": {
+			"password": "robotx"
+		}
 	},
 	"forwardPorts": [
 		6080,
@@ -43,6 +43,9 @@
 			"onAutoForward": "silent"
 		}
 	},
+	"otherPortsAttributes": {
+		"onAutoForward": "ignore"
+	},
 	"containerUser": "robotx",
 	"initializeCommand": "docker pull ghcr.io/ethz-robotx/rss_workspace:main",
 	"postCreateCommand": "bash ./.devcontainer/post-create.sh",
@@ -53,7 +56,9 @@
 				"redhat.vscode-xml",
 				"ms-vscode.cpptools-extension-pack",
 				"eamodio.gitlens",
-				"mhutchie.git-graph"
+				"mhutchie.git-graph",
+				"ms-python.python",
+				"tombonnike.vscode-status-bar-format-toggle"
 			]
 		}
 	}

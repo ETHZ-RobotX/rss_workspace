@@ -3,3 +3,7 @@
 devel/
 logs/
 build/
+
+# ignore rosbags
+bags/
+**/*.bag

@@ -19,5 +19,16 @@
     "src/misc/mav_comm",
     "src/misc/eigen_catkin",
     "src/misc/yaml_cpp_catkin"
-  ]
+  ],
+  "terminal.integrated.profiles.linux": {
+    "smb-tmux": {
+      "path": "zsh",
+      "args": [
+        "${workspaceFolder}/scripts/start_smb_tmux.sh",
+        "smb"
+      ],
+      "icon": "piano",
+      "color": "terminal.ansiYellow"
+    }
+  }
 }
