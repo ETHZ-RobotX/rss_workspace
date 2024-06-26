@@ -17,7 +17,9 @@
 	],
 	"privileged": true,
 	"containerEnv": {
-		"DISPLAY": "${localEnv:DISPLAY}"
+		"DISPLAY": "${localEnv:DISPLAY}",
+		"QT_X11_NO_MITSHM": "1",
+		"MPLBACKEND": "Qt5Agg"
 	},
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {
