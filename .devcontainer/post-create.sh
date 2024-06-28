@@ -43,8 +43,6 @@ if [ ! -d "${ROOT}/src" ]; then
                     smb_exploration \
                     smb_gazebo \
                     smb_mission_planner \
-                    smb_mpc \
-                    smb_msf \
                     smb_msf_graph \
                     smb_path_planner \
                     object_detection \
