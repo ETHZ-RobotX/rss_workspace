@@ -22,9 +22,10 @@ def main():
     args = parser.parse_args()
     top_level_packages = args.packages
     
-    all_build_packages = set()
+    all_build_packages = set(top_level_packages)
     for pkg in top_level_packages:
         all_build_packages |= generate_dependencies(pkg)
+    
     all_build_packages = sorted(all_build_packages)    
     print(" ".join(all_build_packages).lstrip())
 

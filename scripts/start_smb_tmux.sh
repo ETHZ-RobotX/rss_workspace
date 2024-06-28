@@ -22,6 +22,11 @@ else
   tmux split-window -h
   tmux split-window -v
 
+  # Set the title of each pane
+  tmux select-pane -t $SESSION_NAME:0.0 -T "Gazebo"
+  tmux select-pane -t $SESSION_NAME:0.1 -T "Object Detection"
+  tmux select-pane -t $SESSION_NAME:0.2 -T "Custom Command"
+
   # Send the command to panes
   tmux send-keys -t $SESSION_NAME:0.0 'wssetup && roslaunch smb_gazebo sim.launch launch_gazebo_gui:=true keyboard_teleop:=true'
   tmux send-keys -t $SESSION_NAME:0.1 'wssetup && roslaunch object_detection object_detection.launch gpu:=off'
