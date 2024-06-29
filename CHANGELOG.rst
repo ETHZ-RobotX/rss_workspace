@@ -18,3 +18,7 @@ Changelog
 * Do not clone repositories and configure workspace if `src` exists
 * Add pane title for `tmux`
 * fix: add top-level packages to `.devcontainer/generate_catkin_buildlist.py`
+
+1.2.1 (2024-06-29)
+--------------
+* Fix `connect-smb` shell alias.
