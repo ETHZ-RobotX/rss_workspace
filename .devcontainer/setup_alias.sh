@@ -45,10 +45,43 @@ setup_alias_in_bash "wssetup" "source ${ROOT}/devel/setup.bash"
 
 # Aliases for ROS_MASTER_URI and ROS_IP for connecting to SMB
 cat <<'EOF' >> ~/.zshrc
-alias connect-smb261="export ROS_MASTER_URI=http://10.0.1.5:11311 && export ROS_IP=\$(hostname -I | awk '{print \$1}')"
-alias connect-smb262="export ROS_MASTER_URI=http://10.0.2.5:11311 && export ROS_IP=\$(hostname -I | awk '{print \$1}')"
-alias connect-smb263="export ROS_MASTER_URI=http://10.0.3.5:11311 && export ROS_IP=\$(hostname -I | awk '{print \$1}')"
-alias connect-smb264="export ROS_MASTER_URI=http://10.0.4.5:11311 && export ROS_IP=\$(hostname -I | awk '{print \$1}')"
+connect-smb261() {
+    export ROS_MASTER_URI=http://10.0.1.5:11311
+    export ROS_IP=$(hostname -I | awk '{print $1}')
+    echo 'ROS_MASTER_URI and ROS_IP set to '
+    printenv ROS_MASTER_URI
+    printenv ROS_IP
+}
+EOF
+
+cat <<'EOF' >> ~/.zshrc
+connect-smb262() {
+    export ROS_MASTER_URI=http://10.0.2.5:11311
+    export ROS_IP=$(hostname -I | awk '{print $1}')
+    echo 'ROS_MASTER_URI and ROS_IP set to '
+    printenv ROS_MASTER_URI
+    printenv ROS_IP
+}
+EOF
+
+cat <<'EOF' >> ~/.zshrc
+connect-smb263() {
+    export ROS_MASTER_URI=http://10.0.3.5:11311
+    export ROS_IP=$(hostname -I | awk '{print $1}')
+    echo 'ROS_MASTER_URI and ROS_IP set to '
+    printenv ROS_MASTER_URI
+    printenv ROS_IP
+}
+EOF
+
+cat <<'EOF' >> ~/.zshrc
+connect-smb264() {
+    export ROS_MASTER_URI=http://10.0.4.5:11311
+    export ROS_IP=$(hostname -I | awk '{print $1}')
+    echo 'ROS_MASTER_URI and ROS_IP set to '
+    printenv ROS_MASTER_URI
+    printenv ROS_IP
+}
 EOF
 
 # Catkin build memory & job limit
