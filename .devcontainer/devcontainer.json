@@ -17,7 +17,9 @@
 	],
 	"privileged": true,
 	"containerEnv": {
-		"DISPLAY": "${localEnv:DISPLAY}"
+		"DISPLAY": "${localEnv:DISPLAY}",
+		"QT_X11_NO_MITSHM": "1",
+		"MPLBACKEND": "Qt5Agg"
 	},
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {
@@ -47,7 +49,7 @@
 		"onAutoForward": "ignore"
 	},
 	"containerUser": "robotx",
-	"initializeCommand": "docker pull ghcr.io/ethz-robotx/rss_workspace:main",
+	// "initializeCommand": "docker pull ghcr.io/ethz-robotx/rss_workspace:main",
 	"postCreateCommand": "bash ./.devcontainer/post-create.sh",
 	"customizations": {
 		"vscode": {
